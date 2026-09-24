@@ -1,1 +1,177 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+      initial-scale=1,
+      maximum-scale=1,
+      user-scalable=no,
+      viewport-fit=cover">
+
+<title>GameVerse — 160 Games</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <header>
+        <div>
+            <div class="brand">
+                GAME<span>VERSE</span>
+            </div>
+            <div class="tag">
+                160 REAL PLAYABLE GAMES
+            </div>
+        </div>
+
+        <button id="backBtn" class="topbtn hidden">
+            ← GAMES
+        </button>
+    </header>
+
+
+    <!-- HOME -->
+
+    <main id="home">
+
+        <section class="hero">
+
+            <div>
+
+                <p class="eyebrow">
+                    YOUR ARCADE. ONE PAGE.
+                </p>
+
+                <h1>
+                    Pick a game.<br>
+                    <span>Beat the score.</span>
+                </h1>
+
+                <p class="sub">
+                    Play on PC, phone or iPad.
+                    Every game uses real gameplay,
+                    scoring and controls.
+                </p>
+
+            </div>
+
+            <div class="hero-stat">
+                <b id="gameCount">160</b>
+                <small>GAMES</small>
+            </div>
+
+        </section>
+
+
+        <section class="toolbar">
+
+            <input
+                id="search"
+                type="text"
+                placeholder="Search games..."
+                autocomplete="off"
+            >
+
+            <select id="category">
+
+                <option value="all">
+                    All categories
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <section id="grid"></section>
+
+    </main>
+
+
+
+    <!-- GAME SCREEN -->
+
+    <section id="gameScreen" class="hidden">
+
+        <div class="game-head">
+
+            <div>
+
+                <p id="gameCat"></p>
+
+                <h2 id="gameTitle"></h2>
+
+            </div>
+
+
+            <div class="scorebox">
+
+                SCORE
+                <b id="score">0</b>
+
+                <br>
+
+                BEST
+                <b id="best">0</b>
+
+            </div>
+
+        </div>
+
+
+        <div id="canvasWrap">
+
+            <canvas id="game"></canvas>
+
+        </div>
+
+
+        <div id="gameHelp"></div>
+
+
+        <div id="touchControls"></div>
+
+
+        <div id="overlay" class="hidden">
+
+            <div class="panel">
+
+                <div id="overEmoji">
+                    💥
+                </div>
+
+                <h2 id="overTitle">
+                    GAME OVER
+                </h2>
+
+                <p id="overText"></p>
+
+                <button id="restart">
+                    PLAY AGAIN
+                </button>
+
+                <button id="homeBtn" class="secondary">
+                    GAMEVERSE
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
 
