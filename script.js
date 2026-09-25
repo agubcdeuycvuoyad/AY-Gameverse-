@@ -1,83 +1,72 @@
 ```javascript
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
     const grid = document.getElementById("grid");
-    const gameCount = document.getElementById("gameCount");
-
-    if (!grid) {
-        document.body.innerHTML =
-            "<h1 style='color:red;padding:30px'>ERROR: grid not found</h1>";
-        return;
-    }
+    const count = document.getElementById("gameCount");
 
     const games = [
-        "Neon Dash",
-        "Void Runner",
-        "Neon Heist",
-        "Tiny Kingdom",
-        "Mutation Lab",
-        "Gravity Rush",
-        "Reflex Rush",
-        "Neon Rail Rush",
-        "Laser Lane",
-        "Bot Brawl",
-        "Alien Swarm",
-        "Snake Shift",
-        "Brick Breaker",
-        "Paddle Clash",
-        "Sky Flap",
-        "Color Grid",
-        "Beat Drop",
-        "Rocket Run",
-        "Cyber Jump",
-        "Astro Dodge"
+        ["⚡", "Neon Dash", "Runner"],
+        ["🌌", "Void Runner", "Action"],
+        ["💎", "Neon Heist", "Action"],
+        ["🏰", "Tiny Kingdom", "Strategy"],
+        ["🧪", "Mutation Lab", "Puzzle"],
+        ["🪐", "Gravity Rush", "Arcade"],
+        ["🎯", "Reflex Rush", "Reflex"],
+        ["🚄", "Neon Rail Rush", "Racing"],
+        ["🏎️", "Street Surge", "Racing"],
+        ["🧠", "Brain Blitz", "Puzzle"],
+        ["🔥", "Laser Lane", "Action"],
+        ["🤖", "Bot Brawl", "Action"],
+        ["👾", "Alien Swarm", "Action"],
+        ["🐍", "Snake Shift", "Arcade"],
+        ["🧱", "Brick Breaker", "Arcade"],
+        ["🏓", "Paddle Clash", "Sports"],
+        ["🪽", "Sky Flap", "Arcade"],
+        ["🧩", "Color Grid", "Puzzle"],
+        ["🎵", "Beat Drop", "Rhythm"],
+        ["🚀", "Rocket Run", "Runner"]
     ];
 
     grid.innerHTML = "";
 
-    games.forEach(function (name, index) {
+    games.forEach((game, index) => {
 
         const card = document.createElement("div");
 
         card.className = "card";
 
-        card.style.display = "block";
-        card.style.visibility = "visible";
-        card.style.opacity = "1";
-        card.style.cursor = "pointer";
-
         card.innerHTML = `
-            <div class="scanline"></div>
+            <div>
+                <div class="icon">${game[0]}</div>
 
-            <div class="icon">
-                🎮
+                <span class="pill">
+                    ${game[2]}
+                </span>
+
+                <h3>
+                    ${game[1]}
+                </h3>
+
+                <p>
+                    Click to play ${game[1]}.
+                </p>
             </div>
 
-            <div class="cat-tag">
-                GAME ${index + 1}
-            </div>
-
-            <h2>
-                ${name}
-            </h2>
-
-            <p>
-                Play ${name} and beat the high score.
-            </p>
+            <small>
+                PLAY →
+            </small>
         `;
 
         grid.appendChild(card);
 
     });
 
-    if (gameCount) {
-        gameCount.textContent = games.length;
-    }
+    count.textContent = games.length;
 
     console.log(
-        "GAMEVERSE TEST SUCCESS:",
+        "SUCCESS:",
         grid.children.length,
-        "games displayed"
+        "games created"
     );
 
 });
